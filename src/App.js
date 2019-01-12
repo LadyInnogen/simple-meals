@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import winter from './jsons/winter.js';
+import Groceries from './dumb/Groceries';
+import Season from './smart/Season';
 
 class App extends Component {
-  render() {
+    render() {
+	let season = winter;
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+            Bringing you cheap, healthy meal plans for free.
+            </p>
+	    <Season season={season}></Season>
+	    <Groceries season={season}></Groceries>
         </header>
       </div>
     );
